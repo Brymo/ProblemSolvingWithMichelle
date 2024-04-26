@@ -32,15 +32,15 @@ function decide(saidYes) {
 
 function textToShow() {
   if (state == 2)
-    return "IS IT HIGH PRIORITY \n (DOES IT IMPACT OUR OBJECTIVES)?";
-  if (state == 3) return "IS IT URGENT (SAFETY, LEGALITY, COMPLIANCE)?";
+    return "IS IT HIGH PRIORITY \n (Does it impact our objectives)?";
+  if (state == 3) return "IS IT URGENT\n(safety, legality, compliance)?";
   if (state == 4) return "NOTE IT + LEAVE IT!";
   if (state == 5) return "DELEGATE!";
   if (state == 6) return "COULD SOMEONE ON YOUR TEAM OWN IT?";
   if (state == 7)
     return "IF IT MUST BECOME HIGH PRIORITY BC OF IT'S URGENCY, GO FOR IT!";
   if (state == 8)
-    return "OWN IT W/ YOUR TEAM!  ASK THESE Q's \n - Wahre are our realities? \n - What are our options? \n - What is the chosen path to our ideal solution? \n THEN MAKE A GAME PLAN, DELEGATE, AND KEEP AT IT!";
+    return "OWN IT W/ YOUR TEAM!  ASK THESE Q's \n - What are our realities? \n - What are our options? \n - What is the chosen path to our ideal solution? \n THEN MAKE A GAME PLAN, DELEGATE, AND KEEP AT IT!";
 }
 
 function clickedYes(choseYes) {
