@@ -1,46 +1,28 @@
-let state = 2;
+let state = "";
 
 function isEnd() {
-  return state == 4 || state == 5 || state == 7 || state == 8;
+  return state == "NN" || state == "NYY" || state == "NYN" || state == "Y";
 }
 
 function decide(saidYes) {
   if (isEnd()) {
-    state = 2;
+    state = "";
     return;
   }
-
-  if (saidYes) {
-    if (state == 2) {
-      state = 8;
-    } else if (state == 3) {
-      state = 6;
-    } else if (state == 6) {
-      state = 5;
-    }
-  } else {
-    if (state == 2) {
-      console.log(state);
-      state = 3;
-    } else if (state == 3) {
-      state = 4;
-    } else if (state == 6) {
-      state = 7;
-    }
-  }
+  state = state.concat(saidYes ? "Y" : "N");
 }
 
 function textToShow() {
-  if (state == 2)
+  if (state == "")
     return "IS IT HIGH PRIORITY \n (Does it impact our objectives)?";
-  if (state == 3) return "IS IT URGENT\n(safety, legality, compliance)?";
-  if (state == 4) return "NOTE IT + LEAVE IT!";
-  if (state == 5) return "DELEGATE!";
-  if (state == 6) return "COULD SOMEONE ON YOUR TEAM OWN IT?";
-  if (state == 7)
-    return "IF IT MUST BECOME HIGH PRIORITY BC OF IT'S URGENCY, GO FOR IT!";
-  if (state == 8)
+  if (state == "Y")
     return "OWN IT W/ YOUR TEAM!  ASK THESE Q's \n - What are our realities? \n - What are our options? \n - What is the chosen path to our ideal solution? \n THEN MAKE A GAME PLAN, DELEGATE, AND KEEP AT IT!";
+  if (state == "N") return "IS IT URGENT\n(safety, legality, compliance)?";
+  if (state == "NN") return "NOTE IT + LEAVE IT!";
+  if (state == "NY") return "COULD SOMEONE ON YOUR TEAM OWN IT?";
+  if (state == "NYY") return "DELEGATE!";
+  if (state == "NYN")
+    return "IF IT MUST BECOME HIGH PRIORITY BC OF IT'S URGENCY, GO FOR IT!";
 }
 
 function clickedYes(choseYes) {
